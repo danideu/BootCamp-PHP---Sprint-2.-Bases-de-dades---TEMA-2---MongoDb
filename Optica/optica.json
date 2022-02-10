@@ -1,0 +1,244 @@
+
+db.proveedor.insert([
+    {
+        "nombre": "General Óptica",
+        "direccion": {
+            "calle": "c/ Valladolid",
+            "numero": 32,
+            "piso": "Bajos",
+            "puerta": "",
+            "ciudad": "Barcelona",
+            "codigo_postal": 08036,
+            "pais": "España"
+        },
+        "telefono": "+34 677 676 555",
+        "fax": "93 4773873",
+        "nif": "75878992N",
+        "marcas": ["Ray Ban", "Carolina Herrera", "Prada", "Tous"]
+    },
+    {
+        "nombre": "Carolina Herrera",
+        "direccion": {
+            "calle": "c/ París",
+            "numero": 123,
+            "piso": "Bajos",
+            "puerta": "2",
+            "ciudad": "Barcelona",
+            "codigo_postal": 08032,
+            "pais": "España"
+        },
+        "telefono": "+34 632 623 565",
+        "fax": "93 9673842",
+        "nif": "34783551H",
+        "marcas": ["Emporio Armani", "Oakley", "Lacoste"]
+    },
+    {
+        "nombre": "Afflelou",
+        "direccion": {
+            "calle": "c/ Pau Clarís",
+            "numero": 243,
+            "piso": "Bajos",
+            "puerta": "1",
+            "ciudad": "Pamplona",
+            "codigo_postal": 04034,
+            "pais": "España"
+        },
+        "telefono": "+34 611 899 342",
+        "fax": "93 8973376",
+        "nif": "39870332U",
+        "marcas": ["Carrera", "Adidas", "Dior"]
+    },
+    {
+        "nombre": "Opticalia",
+        "direccion": {
+            "calle": "c/ Gran Vía",
+            "numero": 90,
+            "piso": "2º",
+            "puerta": "A",
+            "ciudad": "Madrid",
+            "codigo_postal": 28001,
+            "pais": "España"
+        },
+        "telefono": "+34 623 152 673",
+        "fax": "93 7830822",
+        "nif": "89766543B",
+        "marcas": ["Timberland", "Police"]
+    },
+    
+
+])
+
+
+db.gafas.insert([
+    {
+        "_id": 1,
+        "modelo": "x87 Sol",
+        "marca": "Prada",
+        "graduacion": {
+            "ojo_izq": 4.2,
+            "ojo_der": 2.1
+        },
+        "tipo_montura": "flotante",
+        "montura_color": "verde",
+        "vidreo_color": "oscuro",
+        "precio": 245
+    },
+    {
+        "_id": 2,
+        "modelo": "Predator 2020",
+        "marca": "Adidas",
+        "graduacion": {
+            "ojo_izq": 1.2,
+            "ojo_der": 3.5
+        },
+        "tipo_montura": "pasta",
+        "montura_color": "negro",
+        "vidreo_color": "claro F882",
+        "precio": 152
+    },
+    {
+        "_id": 3,
+        "modelo": "Ibiza Pro 2",
+        "marca": "Carrera",
+        "graduacion": {
+            "ojo_izq": 4.2,
+            "ojo_der": 3.8
+        },
+        "tipo_montura": "pasta",
+        "montura_color": "blanca",
+        "vidreo_color": "claro AD3",
+        "precio": 152
+    },
+    {
+        "_id": 4,
+        "modelo": "Terra mítica ZZA",
+        "marca": "Police",
+        "graduacion": {
+            "ojo_izq": 1.2,
+            "ojo_der": 3.5
+        },
+        "tipo_montura": "pasta",
+        "montura_color": "rojo",
+        "vidreo_color": "oscuro MM2",
+        "precio": 152
+    },
+])
+
+db.clientes.insert([
+    {  
+        "_id": 1,
+        "nombre": "Daniel Pérez",
+        "direccion": {
+            "calle": "c/ París",
+            "numero": 53,
+            "piso": "5",
+            "puerta": "2",
+            "ciudad": "Barcelona",
+            "codigo_postal": 08032,
+            "pais": "España"
+        },
+        "telefono": "+34 656655533",
+        "email": "dperez@yopmail.com",
+        "fec_alta": new Date(),
+        "recomendado": "1" //referencia id cliente
+    },
+    {
+        "_id": 2,
+        "nombre": "Pedro Riera",
+        "direccion": {
+            "calle": "c/ Salamanca",
+            "numero": 453,
+            "piso": "6",
+            "puerta": "A",
+            "ciudad": "Barcelona",
+            "codigo_postal": 08032,
+            "pais": "España"
+        },
+        "telefono": "+34 643653523",
+        "email": "priera@yopmail.com",
+        "fec_alta": new Date(),
+        "recomendado": "1" //referencia id cliente 
+    },
+    {
+        "_id": 3,
+        "nombre": "Fabiola Rodriguez",
+        "direccion": {
+            "calle": "c/ Jimenez",
+            "numero": 23,
+            "piso": "1",
+            "puerta": "C",
+            "ciudad": "Barcelona",
+            "codigo_postal": 08032,
+            "pais": "España"
+        },
+        "telefono": "+34 645265533",
+        "email": "fabiola2020@yopmail.com",
+        "fec_alta": new Date(),
+        "recomendado": "2" //referencia id cliente 
+    },
+    {
+        "_id": 4,
+        "nombre": "James Fonda",
+        "direccion": {
+            "calle": "c/ Artiaga",
+            "numero": 62,
+            "piso": "9",
+            "puerta": "B",
+            "ciudad": "Bilbao",
+            "codigo_postal": 22032,
+            "pais": "España"
+        },
+        "telefono": "+34 656655533",
+        "email": "jamesfonda@yopmail.com",
+        "fec_alta": new Date(),
+        "recomendado": "3" //referencia id cliente  
+    }
+])
+
+db.ventas.insert([
+    {
+        "gafa_id": 1,
+        "cliente_id": 3,
+        "empleado": {
+            "nombre": "Ricardo",
+            "email": "ricardotienda@yopmail.com",
+            "fecha_alta": "01/01/2018"
+        }
+    },
+    {
+        "gafa_id": 2,
+        "cliente_id": 1,
+        "empleado": {
+            "nombre": "Ricardo",
+            "email": "ricardotienda@yopmail.com",
+            "fecha_alta": "01/01/2018"
+        }
+    },
+    {
+        "gafa_id": 3,
+        "cliente_id": 4,
+        "empleado": {
+            "nombre": "Luis",
+            "email": "luistienda@yopmail.com",
+            "fecha_alta": "11/04/2016"
+        }
+    },
+    {
+        "gafa_id": 4,
+        "cliente_id": 2,
+        "empleado": {
+            "nombre": "Ana",
+            "email": "anatienda@yopmail.com",
+            "fecha_alta": "21/07/2020"
+        }
+    },
+    {
+        "cliente_id": 3,
+        "empleado": {
+            "nombre": "Carol",
+            "email": "caroltienda@yopmail.com",
+            "fecha_alta": "30/01/2012"
+        }
+    },
+])
+ 
