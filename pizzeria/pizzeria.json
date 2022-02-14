@@ -1,0 +1,316 @@
+use pizzeria;
+
+db.clientes.insert([
+  {
+    "_id": 1,
+    "nombre": "Daniel",
+    "apellidos": "Pérez Gauta" ,
+    "dirección": "c/ Oscilo 212 2º 1º",
+    "cp": 03847,
+    "id_localidad": 1 ,
+    "id_provincia": 1 ,
+    "telefono": "+34 655567765",
+  },
+  {
+    "_id": 2,
+    "nombre": "Paco",
+    "apellidos": "González Roura" ,
+    "dirección": "c/ Marenostrum 23 1º 1º",
+    "cp": 03848,
+    "id_localidad": 2 ,
+    "id_provincia": 1 ,
+    "telefono": "+34 635587790",
+  },
+  {
+    "_id": 3,
+    "nombre": "Sandra",
+    "apellidos": "Jimenez Silva" ,
+    "dirección": "c/ Mario Pinto 98 6º 5º",
+    "cp": 07848,
+    "id_localidad": 1 ,
+    "id_provincia": 2 ,
+    "telefono": "+34 667824655",
+  }
+])
+
+
+db.provincias.insert(
+  [
+    {
+      "_id": 1,
+      "nombre": "Barcelona",
+      "localidad":[
+        {
+          "idlocalidad": 1,
+          "nombre": "Barcelona"
+        },
+        {
+          "idlocalidad": 2,
+          "nombre": "Sabadell"
+        },
+        {
+          "idlocalidad": 3,
+          "nombre": "Terrasa"
+        },
+        {
+          "idlocalidad": 4,
+          "nombre": "Castelldefels"
+        },
+        {
+          "idlocalidad": 5,
+          "nombre": "Sant Feliu"
+        },
+        {
+          "idlocalidad": 5,
+          "nombre": "Barberá del Valles"
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "nombre": "Valladolid",
+      "localidad": [
+        {
+          "idlocalidad": 1,
+          "nombre": "Valladolid"
+        },
+        {
+          "idlocalidad": 2,
+          "nombre": "Boecillo"
+        },
+        {
+          "idlocalidad": 3,
+          "nombre": "Laguna de Duero"
+        },
+        {
+          "idlocalidad": 4,
+          "nombre": "Nava del Rey"
+        },
+        {
+          "idlocalidad": 5,
+          "nombre": "Olmedo"
+        }
+      ]
+    }
+  ]
+)
+
+db.productos.insert([
+  {
+    "_id": 1,
+    "tipo": "pizza",
+    "nombre": "Pepperoni XL",
+    "categoria": {
+      "id_categoria": "1",
+      "nombre": "familiar"
+    },
+    "descripcion": "Pizza pepperoni al estilo gigante con un toque de extra de tomate y queso.",
+    "imagen": "./img/pizzas/pepperonixl.jpg",
+    "precio": 12.90
+  },
+  {
+    "_id": 2,
+    "tipo": "pizza",
+    "nombre": "Carbonara Border",
+    "categoria": {
+      "id_categoria": "1",
+      "nombre": "mediana"
+    },
+    "descripcion": "Pizza carbonara de nata y bacon con los bordes rellenos de queso.",
+    "imagen": "./img/pizzas/carbonara_border.jpg",
+    "precio": 14.50
+  },
+  {
+    "_id": 3,
+    "tipo": "hamburguesa",
+    "nombre": "Hamburguesa BBQ Max",
+    "descripcion": "Hamburguesa de 250gr con Salsa Barbacoa al estilo gigante.",
+    "imagen": "./img/hamburguesas/hamburguesa_bbqMax.jpg",
+    "precio": 12.80
+  },
+  {
+    "_id": 4,
+    "tipo": "hamburguesa",
+    "nombre": "Hamburguesa Cabra",
+    "descripcion": "Hamburguesa de 250gr con Queso de Cabra con un toque de mermelada de fresa.",
+    "imagen": "./img/hamburguesas/hamburguesa_qcabra.jpg",
+    "precio": 15.20
+  },
+  {
+    "_id": 5,
+    "tipo": "bebida",
+    "nombre": "Coca Cola Zero",
+    "descripcion": "Coca cola Zero de 33ml en botella de cristal.",
+    "imagen": "./img/bebidas/cocacola_zero33ml.jpg",
+    "precio": 2.30
+  },
+  {
+    "_id": 5,
+    "tipo": "bebida",
+    "nombre": "Coca Cola",
+    "descripcion": "Coca cola 33ml en botella de cristal.",
+    "imagen": "./img/bebidas/cocacola_33ml.jpg",
+    "precio": 2.30
+  },
+  {
+    "_id": 6,
+    "tipo": "bebida",
+    "nombre": "Aquarius",
+    "descripcion": "Aquarius 33ml en botella de cristal.",
+    "imagen": "./img/bebidas/aquarius_33ml.jpg",
+    "precio": 2.45
+  },
+  {
+    "_id": 7,
+    "tipo": "bebida",
+    "nombre": "Agua Pequeña",
+    "descripcion": "Agua 33ml Fontbella.",
+    "imagen": "./img/bebidas/aguafont_33ml.jpg",
+    "precio": 1.80
+  }
+])
+
+db.tienda.insert([
+  {
+    "_id": 1,
+    "direccion": {
+      "cp": 08038,
+      "localidad": 1,
+      "provincia": 1
+    },
+    "empleados": {
+      {
+        "idempleado": 1,
+        "nombre": "Ana",
+        "apellidos": "Hurtado Ruíz",
+        "nif": "75888932M",
+        "telefono": "+34 676568921",
+        "puesto": "cocinero"
+      },
+      {
+        "idempleado": 2,
+        "nombre": "Jorge",
+        "apellidos": "Maldonado Alcazar",
+        "nif": "78188654M",
+        "telefono": "+34 672568003",
+        "puesto": "cocinero"
+      },
+      {
+        "idempleado": 3,
+        "nombre": "Carlos",
+        "apellidos": "Fonsere Pietro",
+        "nif": "32146354M",
+        "telefono": "+34 676563243",
+        "puesto": "repartidor"
+      },
+      {
+        "idempleado": 4,
+        "nombre": "Felisa",
+        "apellidos": "Rodri Pau",
+        "nif": "48734254M",
+        "telefono": "+34 667897111",
+        "puesto": "repartidor"
+      }
+    }
+  },
+  {
+    "_id": 2,
+    "direccion": {
+      "cp": 11404,
+      "localidad": 2,
+      "provincia": 1
+    },
+    "empleados": {[
+      {
+        "idempleado": 5,
+        "nombre": "Ricardo",
+        "apellidos": "Maltos Carianza",
+        "nif": "54632221M",
+        "telefono": "+34 645632100",
+        "puesto": "repartidor"
+      },
+      {
+        "idempleado": 6,
+        "nombre": "Luis",
+        "apellidos": "Hernández Solis",
+        "nif": "33343277M",
+        "telefono": "+34 622453909",
+        "puesto": "cocinero"
+      },
+      {
+        "idempleado": 7,
+        "nombre": "Macarena",
+        "apellidos": "Conde Rio",
+        "nif": "32256400G",
+        "telefono": "+34 612453009",
+        "puesto": "repartidor"
+      }
+    ]}
+  }
+])
+
+db.pedidos.insert([
+  {
+    "_id": 1,
+    "fecha": "2022-02-02 22:30:00",
+    "tipo": "reparto",
+    "detalle_pedido": [
+        {
+          "id_producto": 1,
+          "cantidad": 1
+        },
+        {
+          "id_producto": 2,
+          "cantidad": 2
+        },
+        {
+          "id_producto": 3,
+          "cantidad": 1
+        },
+    ],
+    "repartidor": 3,
+    "total": 38.34
+  },
+  {
+    "_id": 2,
+    "fecha": "2022-01-30 22:30:00",
+    "tipo": "reparto",
+    "detalle_pedido": [
+        {
+          "id_producto": 2,
+          "cantidad": 3
+        },
+        {
+          "id_producto": 4,
+          "cantidad": 3
+        },
+        {
+          "id_producto": 1,
+          "cantidad": 2
+        }
+    ],
+    "repartidor": 4,
+    "total": 43.50
+  },
+  {
+    "_id": 3,
+    "fecha": "2022-01-04 21:15:43",
+    "tipo": "reparto",
+    "detalle_pedido": [
+        {
+          "id_producto": 1,
+          "cantidad": 3
+        },
+        {
+          "id_producto": 2,
+          "cantidad": 3
+        },
+        {
+          "id_producto": 4,
+          "cantidad": 2
+        }
+    ],
+    "repartidor": 5,
+    "total": 43.50
+  }
+])
